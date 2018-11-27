@@ -1,41 +1,58 @@
-<mat-toolbar class="navbar">
-<div>
-  <ul>
+<!--<mat-toolbar class="navbar">-->
+<!--<div>-->
+  <!--<ul fxLayout fxLayoutGap="10px">-->
 
-    <li class="profile-item">
-      <a href="#">
-        <span class="profile-image">x</span>
-        <span class="profile-name">x</span>
-      </a>
-    </li>
+    <!--<li class="profile-item">-->
+      <!--<span class="profile-image"></span>-->
+      <!--<span class="profile-name"></span>-->
+    <!--</li>-->
 
-    <li>
-        <mat-form-field class="search-field">
-            <input class="search-input" matInput type="text" placeholder="Clearable input" [(ngModel)]="value">
-            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-              <mat-icon></mat-icon>
-            </button>
-          </mat-form-field>
-    </li>
+    <!--<li>-->
+        <!--<mat-form-field class="search-field">-->
+            <!--<input class="search-input" matInput type="text" placeholder="Search" [(ngModel)]="value">-->
+            <!--<button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">-->
+              <!--<mat-icon></mat-icon>-->
+            <!--</button>-->
+          <!--</mat-form-field>-->
+    <!--</li>-->
 
-    <li>
-      <a href="#">
-        <mat-icon>notifications</mat-icon>
-      </a>
-    </li>
+    <!--<li>-->
+      <!--<a href="#">-->
+        <!--<mat-icon>notifications</mat-icon>-->
+      <!--</a>-->
+    <!--</li>-->
 
-    <li>
-      <a href="#">
-        <mat-icon>message</mat-icon>
-      </a>
-    </li>
+    <!--<li>-->
+      <!--<a href="#">-->
+        <!--<mat-icon>message</mat-icon>-->
+      <!--</a>-->
+    <!--</li>-->
 
-    <li>
-      <a href="#">
-        <mat-icon>settings</mat-icon>
-      </a>
-    </li>
-    
-  </ul>
-</div>
+    <!--<li>-->
+      <!--<a href="#">-->
+        <!--<mat-icon>settings</mat-icon>-->
+      <!--</a>-->
+    <!--</li>-->
+
+  <!--</ul>-->
+<!--</div>-->
+<!--</mat-toolbar>-->
+
+
+<mat-toolbar class="nh-navbar">
+  <div fxFlex fxLayout fxLayoutAlign="end" class="nh-nav-container">
+    <ul fxLayout  fxLayoutAlign="center center" fxLayoutGap="10px" class="nh-navbar-items">
+      <li>
+        <mat-form-field class="example-form-field">
+          <input matInput type="text" placeholder="Search" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </li>
+      <li><a href="#"><mat-icon>message</mat-icon></a></li>
+      <li><a href="#"><mat-icon>notifications</mat-icon></a></li>
+      <li><a href="#"><mat-icon>settings</mat-icon></a></li>
+    </ul>
+  </div>
 </mat-toolbar>

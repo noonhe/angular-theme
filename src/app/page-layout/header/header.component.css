@@ -1,4 +1,18 @@
-.navbar{
-    background-color: #6c58bb;
-    width: 100%;
+.nh-navbar{
+    background-color: #5e35b1;
+    direction: rtl;
+}
+
+.nh-nav-container{
+  height: 100%;
+}
+
+.nh-navbar-items{
+  list-style: none;
+  color : #ede7f6;
+}
+
+a{
+  text-decoration: none;
+  color : #ede7f6;
 }
