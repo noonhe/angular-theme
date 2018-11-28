@@ -1,11 +1,15 @@
-<mat-toolbar class="theme-navbar">
-  <div fxFlex fxLayout fxLayoutAlign="end" class="theme-nav-container">
-    <ul fxLayout  fxLayoutAlign="end center" fxLayoutGap="10px" class="theme-navbar-items">
-      <li>
-        <img src="assets/images/user.png" class="theme-profile-image rounded-circle border">
-        <span class="theme-profile-title">نسترن حیدری</span>
-      </li>
-      <li>
+<!-- <mat-toolbar class="theme-navbar">
+    <div class="theme-profile-container">
+        <a href="#" mat-button>
+            <img src="assets/images/user.png" class="theme-profile-image rounded-circle border">
+            <span class="theme-profile-title">نسترن حیدری</span>
+            
+        </a>
+    </div>
+    
+    <ul fxLayout="row" class="theme-navbar-items">
+      <li fxHide.gt-sm fxShow.lt-md><mat-icon>menu</mat-icon></li>
+      <li fxShow.gt-sm fxHide.lt-md>
         <mat-form-field>
           <input matInput type="text" placeholder="Search" [(ngModel)]="value">
           <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -13,9 +17,64 @@
           </button>
         </mat-form-field>
       </li>
-      <li><a href="#"><mat-icon matBadge="4" >notifications</mat-icon></a></li>
-      <li><a href="#"><mat-icon matBadge="5">message</mat-icon></a></li>
-      <li><a href="#"><mat-icon>settings</mat-icon></a></li>
+      <li fxShow.gt-sm fxHide.lt-md><a href="#"><mat-icon matBadge="4" matBadgePosition="above after" >notifications</mat-icon></a></li>
+      <li fxShow.gt-sm fxHide.lt-md><a href="#"><mat-icon matBadge="5" matBadgePosition="above after">message</mat-icon></a></li>
+      <li fxShow.gt-sm fxHide.lt-md><a href="#"><mat-icon>settings</mat-icon></a></li>
+      <li fxHide.gt-sm fxShow.lt-md><mat-icon>person</mat-icon></li>
+    </ul>
+  
+</mat-toolbar> -->
+<mat-toolbar class="theme-navbar">
+  <div>
+    <a href="#" fxHide.lt-md fxShow.gt-sm class="theme-user">
+      <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
+      <span class="theme-profile-title">نسترن حیدری</span>
+    </a>
+    <a href="#" mat-button fxHide.gt-sm fxShow.lt-md>
+      <mat-icon>menu</mat-icon>
+    </a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end">
+    <ul fxLayout fxLayoutAlign="end center" fxLayoutGap="20px" class="theme-navbar-items">
+      <li fxShow.gt-sm fxHide.lt-md>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Search" [(ngModel)]="value">
+          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+      </li>
+      <li fxHide.lt-md fxShow.gt-sm><a>
+          <mat-icon matBadge="4" matBadgePosition="above after">notifications</mat-icon>
+        </a></li>
+      <li fxHide.lt-md fxShow.gt-sm><a>
+          <mat-icon matBadge="5" matBadgePosition="above after">message</mat-icon>
+        </a></li>
+      <li fxHide.lt-md fxShow.gt-sm><a>
+          <mat-icon>settings</mat-icon>
+        </a></li>
+      <li fxHide.gt-sm fxShow.lt-md><a>
+          <mat-icon>person</mat-icon>
+        </a></li>
     </ul>
   </div>
 </mat-toolbar>
+<app-breadcrumb [model]="items" [home]="home"></app-breadcrumb>
+
+
+
+<!-- <mat-toolbar color="primary">
+    <div fxHide.sm fxHide.md fxHide.lg fxHide.xl>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+         </button>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="10px" class="navigation-list">
+            <li *ngIf="!isAuth"><a routerLink="/login">Login</a></li>
+            <li *ngIf="!isAuth"><a routerLink="/signup">Signup</a></li>
+            <li *ngIf="isAuth"><a routerLink="/training">Training</a></li>
+            <li *ngIf="isAuth"><a style="cursor:pointer" (click)="onLogout()">Logout</a></li>
+        </ul>
+    </div>
+ </mat-toolbar> -->

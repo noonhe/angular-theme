@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CustomPrimengModule} from './custom-primeng/custom-primeng.module';
 import {PageLayoutModule} from './page-layout/page-layout.module';
-
+import {PrimengComponentsModule} from './primeng-components.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import {PageLayoutModule} from './page-layout/page-layout.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     CustomPrimengModule,
-    PageLayoutModule
+    PageLayoutModule,
+    PrimengComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

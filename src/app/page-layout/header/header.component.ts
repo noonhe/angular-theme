@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MenuItem} from 'primeng/api';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
-
+  private items : MenuItem[]
+  home : MenuItem;
   ngOnInit() {
+    this.items = [
+      {label:'خانه'},
+    ];
+    this.home = {icon : "pi pi-home"}
   }
 
 }
