@@ -1,11 +1,42 @@
-body{
-    
-}
 .theme-container{
     width:100%;
     height: 100vh;
     padding-right:60px;
     background-color: rgb(245, 245, 245)
+}
+
+.theme-content{
+    width:100%;
+    padding: 15xp;
+    padding-top: 30px;
+    direction: rtl;
+}
+
+.theme-boxes-container{
+    height: 150px;
+}
+
+.theme-box{
+    padding: 0.5em;
+}
+
+.theme-box div{
+    width: 100%;
+    direction: rtl;
+    padding: 15px;
+}
+
+#theme-box-users{
+    background-color: #f696cb;
+}
+#theme-box-files{
+    background-color: #8dcbff;
+}
+#theme-box-checkin{
+    background-color: #ffbf79
+}
+#theme-box-messages{
+    background-color: #9189fd;
 }
 
 app-header{
