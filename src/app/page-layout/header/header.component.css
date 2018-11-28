@@ -1,15 +1,29 @@
-.nh-navbar{
+.theme-navbar{
     background-color: #5e35b1;
     direction: rtl;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+    font-size: 14px;
 }
 
-.nh-nav-container{
+.theme-nav-container{
   height: 100%;
 }
 
-.nh-navbar-items{
+.theme-navbar-items{
+  width:100%;
   list-style: none;
   color : #ede7f6;
+}
+
+
+.theme-profile-image {
+  padding: 4px;
+ width: 40px;
+ height: 40px;
+}
+
+.theme-profile-title{
+  margin-right:6px;
 }
 
 a{

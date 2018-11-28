@@ -6,9 +6,9 @@ import { PageLayoutRoutingModule } from './page-layout-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MaterialComponentsModule} from './material-components.module'
-
+import { HomePageComponent } from './home-page/home-page.component'
 @NgModule({
-  declarations: [HeaderComponent, SidenavComponent],
+  declarations: [HeaderComponent, SidenavComponent, HomePageComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,7 +18,8 @@ import {MaterialComponentsModule} from './material-components.module'
   ],
   exports:[
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    HomePageComponent
   ]
 })
 export class PageLayoutModule { }
