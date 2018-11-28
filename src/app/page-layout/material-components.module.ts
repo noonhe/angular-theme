@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [],
   imports: [
@@ -18,6 +19,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatButtonModule,
     FlexLayoutModule,
     MatBadgeModule,
+    MatMenuModule,
   ],
   exports: [
     MatIconModule,
@@ -26,7 +28,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatFormFieldModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatMenuModule,
   ]
 })
 export class MaterialComponentsModule { }

@@ -1,10 +1,24 @@
 <mat-toolbar class="theme-navbar">
   <div>
-    <a href="#" fxHide.lt-md fxShow.gt-sm class="theme-user">
+    <a href="#" fxHide.lt-md fxShow.gt-sm class="theme-user" mat-button [matMenuTriggerFor]="menu">
       <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
       <span class="theme-profile-title">نسترن حیدری</span>
     </a>
-    <a href="#" mat-button fxHide.gt-sm fxShow.lt-md>
+    <mat-menu #menu="matMenu" class="theme-navbar-menu">
+        <button mat-menu-item>
+          <mat-icon></mat-icon>
+          <span></span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon></mat-icon>
+            <span></span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon></mat-icon>
+            <span></span>
+        </button>
+    </mat-menu>
+    <a href="#" mat-button fxHide.gt-sm fxShow.lt-md [matMenuTriggerFor]="">
       <mat-icon>menu</mat-icon>
     </a>
   </div>
@@ -18,18 +32,26 @@
           </button>
         </mat-form-field>
       </li>
-      <li fxHide.lt-md fxShow.gt-sm><a>
+      <li fxHide.lt-md fxShow.gt-sm>
+        <a mat-button [matMenuTriggerFor]="">
           <mat-icon matBadge="4" matBadgePosition="above after">notifications</mat-icon>
-        </a></li>
-      <li fxHide.lt-md fxShow.gt-sm><a>
+        </a>
+      </li>
+      <li fxHide.lt-md fxShow.gt-sm>
+        <a mat-button [matMenuTriggerFor]="">
           <mat-icon matBadge="5" matBadgePosition="above after">comment</mat-icon>
-        </a></li>
-      <li fxHide.lt-md fxShow.gt-sm><a>
+        </a>
+      </li>
+      <li fxHide.lt-md fxShow.gt-sm>
+        <a mat-button [matMenuTriggerFor]="">
           <mat-icon>settings</mat-icon>
-        </a></li>
-      <li fxHide.gt-sm fxShow.lt-md><a>
+        </a>
+      </li>
+      <li fxHide.gt-sm fxShow.lt-md>
+        <a mat-button [matMenuTriggerFor]="">
           <mat-icon>person</mat-icon>
-        </a></li>
+        </a>
+      </li>
     </ul>
   </div>
 </mat-toolbar>
