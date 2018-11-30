@@ -31,6 +31,19 @@
 
 .mat-badge-content{
   background-color: #e48a29;
+  color: black;
+  width: 18px !important;
+  height: 18px !important;
+  line-height: 18px !important;
+}
+
+.mat-button{
+  padding: 0px 25px 0px 0px !important;
+  min-width: 40px;
+}
+
+mat-icon{
+  font-size: 32px;
 }
 
 a{

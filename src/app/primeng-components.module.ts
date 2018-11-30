@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
+import {PanelMenuModule} from 'primeng/panelmenu'
 import {MenuItem} from 'primeng/api';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    PanelMenuModule,
   ],
   exports:[
-    BreadcrumbModule
+    BreadcrumbModule,
+    PanelMenuModule,
   ]
 })
 export class PrimengComponentsModule { }

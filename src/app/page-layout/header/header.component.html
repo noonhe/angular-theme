@@ -23,23 +23,22 @@
     </a>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end">
-    <ul fxLayout fxLayoutAlign="end center" fxLayoutGap="20px" class="theme-navbar-items">
+    <ul fxLayout fxLayoutAlign="end center" class="theme-navbar-items">
       <li fxShow.gt-sm fxHide.lt-md>
-        <mat-form-field>
-          <input matInput type="text" placeholder="Search" [(ngModel)]="value">
-          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-            <mat-icon>search</mat-icon>
-          </button>
-        </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Search">
+            <mat-icon matPrefix>search</mat-icon>
+          </mat-form-field>
+        
       </li>
       <li fxHide.lt-md fxShow.gt-sm>
         <a mat-button [matMenuTriggerFor]="">
-          <mat-icon matBadge="4" matBadgePosition="above after">notifications</mat-icon>
+          <mat-icon matBadge="4" matBadgePosition="above after" matBadgeSize="medium">notifications</mat-icon>
         </a>
       </li>
       <li fxHide.lt-md fxShow.gt-sm>
         <a mat-button [matMenuTriggerFor]="">
-          <mat-icon matBadge="5" matBadgePosition="above after">comment</mat-icon>
+          <mat-icon matBadge="5" matBadgePosition="above after" matBadgeSize="medium">comment</mat-icon>
         </a>
       </li>
       <li fxHide.lt-md fxShow.gt-sm>

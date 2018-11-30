@@ -5,9 +5,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule, MatSidenavModule} from '@angular/material';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -20,6 +24,10 @@ import {MatMenuModule} from '@angular/material/menu';
     FlexLayoutModule,
     MatBadgeModule,
     MatMenuModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatListModule,
+    MatRadioModule,
   ],
   exports: [
     MatIconModule,
@@ -30,6 +38,10 @@ import {MatMenuModule} from '@angular/material/menu';
     FlexLayoutModule,
     MatBadgeModule,
     MatMenuModule,
+    MatSidenavModule,
+    MatSlideToggleModule,
+    MatListModule,
+    MatRadioModule
   ]
 })
 export class MaterialComponentsModule { }

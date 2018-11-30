@@ -1,0 +1,18 @@
+.theme-sidenav-container{
+    height: 100vh;
+}
+
+.theme-sidenav{
+    border-color: transparent;
+}
+.theme-sidenav mat-toolbar{
+    border-color: transparent;
+}
+
+.theme-sidenav-logo{
+    background-color: #512DA8;
+}
+
+.mat-drawer-inner-container{
+    overflow: hidden !important;
+}
