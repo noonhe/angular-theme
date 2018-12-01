@@ -15,12 +15,14 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     this.items = [{
         label: 'سیستم مدیریت مستندات',
+        icon:'storage',
         items: [{label: 'تخصیص شماره فنی', routerLink:'TechnicalNoGenerator'},
         {label: 'لیست کدهای ثبت‌شده', routerLink:'TechnicalNoGenerator'},
         {label: 'لیست پروژه‌های موقت', routerLink:'TechnicalNoGenerator'},]
     },
     {
         label: 'سیستم مدیریت مجوزها',
+        icon:'assignment',
         items: [
             {label: 'مجوزها', routerLink:'DomainPermission' },
             {label: 'نقش‌ها', routerLink:'RoleUserPermission'}

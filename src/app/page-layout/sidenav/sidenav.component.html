@@ -1,17 +1,21 @@
 <mat-sidenav-container class="theme-sidenav-container" autosize>
-  <mat-sidenav  class="theme-sidenav" #sidenav mode="side" position="end" opened="true" (mouseenter)="expandSidebar()" (mouseleave)="closeSidebar()">
-    <mat-toolbar class="theme-sidenav-logo">
-      <div  fxLayout fxLayoutAlign="space-between" style="width:100%;">
-        <span class="theme-navbar-title">رستافن</span>
-        
-        <mat-slide-toggle (change)="changeSidenavMode($event)"></mat-slide-toggle>
+    <mat-sidenav class="theme-sidenav" #sidenav mode="side" position="end" opened="true" (mouseenter)="expandSidebar()"
+        (mouseleave)="closeSidebar()">
+        <mat-toolbar class="theme-sidenav-logo">
+            <div fxLayout fxLayoutAlign="space-between" style="width:100%;">
+                <span class="theme-navbar-title">رستافن</span>
+                <mat-slide-toggle (change)="changeSidenavMode($event)"></mat-slide-toggle>
+            </div>
+        </mat-toolbar>
 
-      </div>
-    </mat-toolbar>
-    
-    <div class="theme-sidenav-list-container">
-        <mat-accordion  >
-            <mat-expansion-panel class="theme-expansion-panel" *ngFor="let item of items" >
+        <div class="theme-sidenav-list-container">
+            <div class="theme-dashboard-link" fxLayout fxLayoutAlign="start center">
+                <a routerLink="/homePage">
+                <span>داشبورد</span>
+                </a>
+            </div>
+            <mat-accordion>
+                <mat-expansion-panel class="theme-expansion-panel" *ngFor="let item of items">
                     <mat-expansion-panel-header expandedHeight="48px">
                         <mat-panel-title>{{item.label}}</mat-panel-title>
                         <mat-panel-description></mat-panel-description>
@@ -21,49 +25,12 @@
                             <a routerLink="{{link.routerLink}}">{{link.label}}</a>
                         </mat-list-item>
                     </mat-nav-list>
-            </mat-expansion-panel>
-        </mat-accordion>
-        <!-- <p-panelMenu [model]="items" [style]="{'width':'300px'}" multiple="false" ></p-panelMenu> -->
-        <!-- <mat-nav-list class="dashboard" *ngIf="!expand">
-            <a mat-list-item (click)="toggleActive($event)">
-              <mat-icon mat-list-icon >account_circle</mat-icon>
-              <p matLine *ngIf="isExpanded">Name</p>
-            </a>
-    
-            
-    
-            <a mat-list-item (click)="toggleActive($event)">
-                <mat-icon mat-list-icon>inbox</mat-icon>
-                <p matLine *ngIf="isExpanded">Inbox</p>
-            </a>
-            <a mat-list-item (click)="toggleActive($event)">
-                <mat-icon mat-list-icon>star</mat-icon>
-                <p matLine *ngIf="isExpanded">Starred</p>
-            </a>
-            <a mat-list-item (click)="toggleActive($event)">
-                <mat-icon mat-list-icon>drafts</mat-icon>
-                <p matLine *ngIf="isExpanded">Drafts</p>
-            </a>
-    
-       
-    
-            <a mat-list-item (click)="toggleActive($event)">
-                <mat-icon mat-list-icon>mail</mat-icon>
-                <p matLine *ngIf="isExpanded">All Mail</p>
-            </a>
-            <a mat-list-item (click)="toggleActive($event)">
-                <mat-icon mat-list-icon>delete</mat-icon>
-                <p matLine *ngIf="isExpanded">Trash</p>
-            </a>
-            <a mat-list-item (click)="toggleActive($event)">
-                <mat-icon mat-list-icon>warning</mat-icon>
-                <p matLine *ngIf="isExpanded">Spam</p>
-            </a>
-          </mat-nav-list> -->
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content class="theme-main-content">
-    <app-header></app-header>
-    <app-home-page></app-home-page>
-  </mat-sidenav-content>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="theme-main-content">
+        <app-header></app-header>
+        <app-home-page></app-home-page>
+    </mat-sidenav-content>
 </mat-sidenav-container>
