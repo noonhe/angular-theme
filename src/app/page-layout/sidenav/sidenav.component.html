@@ -1,15 +1,29 @@
 <mat-sidenav-container class="theme-sidenav-container" autosize>
-  <mat-sidenav fxLayout fxFlex="10" class="theme-sidenav" #sidenav mode="side" position="end" opened="true" (mouseenter)="expandSidebar()" (mouseleave)="closeSidebar()">
+  <mat-sidenav  class="theme-sidenav" #sidenav mode="side" position="end" opened="true" (mouseenter)="expandSidebar()" (mouseleave)="closeSidebar()">
     <mat-toolbar class="theme-sidenav-logo">
-      <div *ngIf="expand">
-          <mat-radio-button value="push"></mat-radio-button>
+      <div  fxLayout fxLayoutAlign="space-between" style="width:100%;">
         <span class="theme-navbar-title">رستافن</span>
         
+        <mat-slide-toggle (change)="changeSidenavMode($event)"></mat-slide-toggle>
+
       </div>
     </mat-toolbar>
     
     <div class="theme-sidenav-list-container">
-        <p-panelMenu [model]="items" [style]="{'width':'300px'}" multiple="false" ></p-panelMenu>
+        <mat-accordion  >
+            <mat-expansion-panel class="theme-expansion-panel" *ngFor="let item of items" >
+                    <mat-expansion-panel-header expandedHeight="48px">
+                        <mat-panel-title>{{item.label}}</mat-panel-title>
+                        <mat-panel-description></mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list>
+                        <mat-list-item *ngFor="let link of item.items">
+                            <a routerLink="{{link.routerLink}}">{{link.label}}</a>
+                        </mat-list-item>
+                    </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <!-- <p-panelMenu [model]="items" [style]="{'width':'300px'}" multiple="false" ></p-panelMenu> -->
         <!-- <mat-nav-list class="dashboard" *ngIf="!expand">
             <a mat-list-item (click)="toggleActive($event)">
               <mat-icon mat-list-icon >account_circle</mat-icon>

@@ -13,3 +13,51 @@
 *{
   font-family: "IRANSans";
 }
+
+.mat-menu-panel{
+  width: 200px;
+  border-radius: 0px !important;
+  border-top: 4px solid #5E35B1 !important;
+  margin-top:25px !important;
+  animation: fadeInUp 0.5s;
+}
+.mat-menu-panel::after{
+   width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 15px solid #5E35B1;
+    content: " ";
+    position: absolute;
+    top: 10px !important;
+    left: 0px !important;
+}
+.mat-menu-content{
+  direction: rtl;
+  text-align: right;
+  padding: 3px;
+}
+
+.mat-expansion-panel-header.mat-expanded{
+ background-color: #5E35B1 !important;
+ color: white !important;
+
+}
+
+.mat-expansion-panel-body{
+  background-color: #eeeeee;
+  padding: 0 10px 16px 10px !important;
+}
+
+.mat-expansion-panel-header{
+  padding: 0 10px !important;
+}
+
+.mat-expansion-panel-header.mat-expanded .mat-expansion-panel-header-title ,
+.mat-expansion-panel-header.mat-expanded .mat-expansion-indicator::after {
+  color: #ede7f6;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar .mat-slide-toggle-thumb {
+  background-color:#e48a29 !important;
+}

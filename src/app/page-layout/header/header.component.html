@@ -2,53 +2,94 @@
   <div>
     <a href="#" fxHide.lt-md fxShow.gt-sm class="theme-user" mat-button [matMenuTriggerFor]="menu">
       <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
-      <span class="theme-profile-title">نسترن حیدری</span>
+      <span class="theme-profile-title">نام نام‌خانوادگی</span>
     </a>
-    <mat-menu #menu="matMenu" class="theme-navbar-menu">
-        <button mat-menu-item>
-          <mat-icon></mat-icon>
-          <span></span>
-        </button>
-        <button mat-menu-item>
-            <mat-icon></mat-icon>
-            <span></span>
-        </button>
-        <button mat-menu-item>
-            <mat-icon></mat-icon>
-            <span></span>
-        </button>
+    <mat-menu #menu="matMenu"  class="animated">
+      <button mat-menu-item >
+        <mat-icon>person</mat-icon>
+        <span>پروفایل</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>تنظیمات</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>خروج</span>
+      </button>
     </mat-menu>
-    <a href="#" mat-button fxHide.gt-sm fxShow.lt-md [matMenuTriggerFor]="">
-      <mat-icon>menu</mat-icon>
+    <a href="#" mat-button fxHide.gt-sm fxShow.lt-md >
+      <mat-icon class="theme-nav-icons">menu</mat-icon>
     </a>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end">
     <ul fxLayout fxLayoutAlign="end center" class="theme-navbar-items">
       <li fxShow.gt-sm fxHide.lt-md>
-          <mat-form-field>
-            <input matInput placeholder="Search">
-            <mat-icon matPrefix>search</mat-icon>
-          </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Search">
+          <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+
+      </li>
+      <li fxHide.lt-md fxShow.gt-sm>
+        <a mat-button [matMenuTriggerFor]="notifmenu">
+          <mat-icon class="theme-nav-icons" matBadge="4" matBadgePosition="above after" matBadgeSize="medium">notifications</mat-icon>
+        </a>
+        <mat-menu #notifmenu="matMenu" class="theme-navbar-menu">
+            <button mat-menu-item>
+              <mat-icon>check_circle</mat-icon>
+              <span>قرار ملاقات</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>check_circle</mat-icon>
+              <span>جلسه</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>check_circle</mat-icon>
+              <span>وظایف انجام نشده</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>check_circle</mat-icon>
+              <span>ارسال تایم‌شیت</span>
+            </button>
+          </mat-menu>
         
       </li>
       <li fxHide.lt-md fxShow.gt-sm>
-        <a mat-button [matMenuTriggerFor]="">
-          <mat-icon matBadge="4" matBadgePosition="above after" matBadgeSize="medium">notifications</mat-icon>
+        <a mat-button [matMenuTriggerFor]="messagemenu">
+          <mat-icon class="theme-nav-icons" matBadge="5" matBadgePosition="above after" matBadgeSize="medium">comment</mat-icon>
         </a>
+        <mat-menu #messagemenu="matMenu" class="theme-navbar-menu">
+            <button mat-menu-item>
+              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
+              <span>با من تماس بگیر</span>
+            </button>
+            <button mat-menu-item>
+              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
+              <span>با من تماس بگیر</span>
+            </button>
+            <button mat-menu-item>
+              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
+              <span>با من تماس بگیر</span>
+            </button>
+            <button mat-menu-item>
+              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
+              <span>با من تماس بگیر</span>
+            </button>
+            <button mat-menu-item>
+              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
+              <span>با من تماس بگیر</span>
+            </button>
+          </mat-menu>
       </li>
       <li fxHide.lt-md fxShow.gt-sm>
-        <a mat-button [matMenuTriggerFor]="">
-          <mat-icon matBadge="5" matBadgePosition="above after" matBadgeSize="medium">comment</mat-icon>
-        </a>
-      </li>
-      <li fxHide.lt-md fxShow.gt-sm>
-        <a mat-button [matMenuTriggerFor]="">
-          <mat-icon>settings</mat-icon>
+        <a mat-button>
+          <mat-icon class="theme-nav-icons">settings</mat-icon>
         </a>
       </li>
       <li fxHide.gt-sm fxShow.lt-md>
-        <a mat-button [matMenuTriggerFor]="">
-          <mat-icon>person</mat-icon>
+        <a mat-button>
+          <mat-icon class="theme-nav-icons">person</mat-icon>
         </a>
       </li>
     </ul>
