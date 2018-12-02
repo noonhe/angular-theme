@@ -7,7 +7,7 @@
       <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
       <span class="theme-profile-title">نام نام‌خانوادگی</span>
     </a>
-    <mat-menu #menu="matMenu">
+    <mat-menu #menu="matMenu" panelClass="theme-profile-menu">
       <button mat-menu-item *ngFor="let option of profileOptions">
         <mat-icon>{{option.icon}}</mat-icon>
         <span>{{option.title}}</span>

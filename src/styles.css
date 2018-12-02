@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "~bootstrap/dist/css/bootstrap.min.css";
-
+@import "~animate.css/animate.min.css";
+@import "~material-design-icons/iconfont/material-icons.css";
 @import "primeicons/primeicons.css";
 @import "primeng/resources/themes/nova-light/theme.css";
 @import "primeng/resources/primeng.min.css";
@@ -37,6 +38,23 @@
   animation: fadeInRightBig 0.75s;
 }
 
+.theme-profile-menu .cdk-overlay-conncted-position-bounding-box{
+  right: 100px;
+  background-color: aqua;
+}
+
+.theme-profile-menu .cdk-overlay-pane::before{
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 15px solid #5E35B1;
+  content: " ";
+  position: absolute;
+  right: 0px;
+  top: 10px !important;
+  animation: fadeInRightBig 0.75s;
+}
 
 .profile-menu .cdk-overlay-pane::before{
   width: 0;
