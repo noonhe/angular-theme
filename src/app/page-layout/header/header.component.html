@@ -1,27 +1,19 @@
 <mat-toolbar class="theme-navbar">
   <div>
-    <a mat-button class="theme-menu-toggle-button" *ngIf="!menuAvailable" (click)="changeSidenavMode(!mode)" > 
+    <a mat-button class="theme-menu-toggle-button" *ngIf="!menuAvailable" (click)="changeSidenavMode(!mode)">
       <mat-icon>menu</mat-icon>
     </a>
     <a href="#" fxHide.lt-md fxShow.gt-sm class="theme-user" mat-button [matMenuTriggerFor]="menu">
       <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
       <span class="theme-profile-title">نام نام‌خانوادگی</span>
     </a>
-    <mat-menu #menu="matMenu"  class="animated">
-      <button mat-menu-item >
-        <mat-icon>person</mat-icon>
-        <span>پروفایل</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>settings</mat-icon>
-        <span>تنظیمات</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span>خروج</span>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let option of profileOptions">
+        <mat-icon>{{option.icon}}</mat-icon>
+        <span>{{option.title}}</span>
       </button>
     </mat-menu>
-    
+
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end">
     <ul fxLayout fxLayoutAlign="end center" class="theme-navbar-items">
@@ -34,64 +26,69 @@
       </li>
       <li fxHide.lt-md fxShow.gt-sm>
         <a mat-button [matMenuTriggerFor]="notifmenu">
-          <mat-icon class="theme-nav-icons" matBadge="4" matBadgePosition="above after" matBadgeSize="medium">notifications</mat-icon>
+          <mat-icon class="theme-nav-icons" matBadge="{{notifications.length}}" matBadgePosition="above after"
+            matBadgeSize="medium">notifications</mat-icon>
         </a>
         <mat-menu #notifmenu="matMenu" class="theme-navbar-menu">
-            <button mat-menu-item>
-              <mat-icon>check_circle</mat-icon>
-              <span>قرار ملاقات</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>check_circle</mat-icon>
-              <span>جلسه</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>check_circle</mat-icon>
-              <span>وظایف انجام نشده</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>check_circle</mat-icon>
-              <span>ارسال تایم‌شیت</span>
-            </button>
-          </mat-menu>
-        
+          <button mat-menu-item *ngFor="let option of notifications">
+            <mat-icon>{{option.icon}}</mat-icon>
+            <span>{{option.title}}</span>
+          </button>
+        </mat-menu>
+
       </li>
       <li fxHide.lt-md fxShow.gt-sm>
         <a mat-button [matMenuTriggerFor]="messagemenu">
-          <mat-icon class="theme-nav-icons" matBadge="5" matBadgePosition="above after" matBadgeSize="medium">comment</mat-icon>
+          <mat-icon class="theme-nav-icons" matBadge="{{messages.length}}" matBadgePosition="above after" matBadgeSize="medium">comment</mat-icon>
         </a>
         <mat-menu #messagemenu="matMenu" class="theme-navbar-menu">
-            <button mat-menu-item>
-              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
-              <span>با من تماس بگیر</span>
-            </button>
-            <button mat-menu-item>
-              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
-              <span>با من تماس بگیر</span>
-            </button>
-            <button mat-menu-item>
-              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
-              <span>با من تماس بگیر</span>
-            </button>
-            <button mat-menu-item>
-              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
-              <span>با من تماس بگیر</span>
-            </button>
-            <button mat-menu-item>
-              <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
-              <span>با من تماس بگیر</span>
-            </button>
-          </mat-menu>
+          <button mat-menu-item *ngFor="let option of messages">
+            <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
+            <span>{{option.title}}</span>
+          </button>
+        </mat-menu>
       </li>
       <li fxHide.lt-md fxShow.gt-sm>
-        <a mat-button>
+        <a mat-button [matMenuTriggerFor]="settingmenu">
           <mat-icon class="theme-nav-icons">settings</mat-icon>
         </a>
+        <mat-menu #settingmenu="matMenu" class="theme-navbar-menu">
+          <button mat-menu-item *ngFor="let option of settings">
+            <mat-icon>{{option.icon}}</mat-icon>
+            <span>{{option.title}}</span>
+          </button>
+        </mat-menu>
       </li>
       <li fxHide.gt-sm fxShow.lt-md>
-        <a mat-button>
-          <mat-icon class="theme-nav-icons">person</mat-icon>
+        <a mat-button [matMenuTriggerFor]="mergedmenu">
+          <mat-icon class="theme-nav-icons">account_circle</mat-icon>
         </a>
+        <mat-menu #mergedmenu="matMenu" class="theme-navbar-menu small-screen-menu">
+          <button mat-menu-item>
+            <a href="#">
+              <img src="assets/images/user.png" class="rounded-circle">
+              <span style="color: rgba(0,0,0,0.87)">نام نام‌خانوادگی</span>
+            </a>
+          </button>
+          <mat-accordion>
+            <mat-expansion-panel #panel class="theme-smallscreen-expansion-panel" hideToggle *ngFor="let link of links" (mouseenter)="panel.open()" (mouseleave)="panel.close()">
+              <mat-expansion-panel-header>
+                  <mat-icon>{{link.icon}}</mat-icon>
+                  <mat-panel-title>{{link.title}}</mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-nav-list>
+                  <mat-list-item *ngFor="let option of link.menu">
+                      <a>
+                          <mat-icon *ngIf="option.icon">{{option.icon}}</mat-icon>
+                          <img *ngIf="!option.icon" src="assets/images/user.png" class="rounded-circle">
+                          <span>{{option.title}}</span>
+                      </a>
+                  </mat-list-item>
+              </mat-nav-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+          
+        </mat-menu>
       </li>
     </ul>
   </div>

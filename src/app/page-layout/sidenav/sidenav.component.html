@@ -3,7 +3,7 @@
         <mat-toolbar class="theme-sidenav-logo">
             <div fxLayout fxLayoutAlign="space-between" style="width:100%;">
                 <span class="theme-navbar-title">رستافن</span>
-                <mat-slide-toggle (change)="changeSidenavMode($event)"></mat-slide-toggle>
+                <mat-slide-toggle (change)="changeSidenavMode($event)" fxHide.lt-md fxShow.gt-sm></mat-slide-toggle>
             </div>
         </mat-toolbar>
 

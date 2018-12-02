@@ -15,12 +15,16 @@
 }
 
 .mat-menu-panel{
-  width: 200px;
+  width: 250px;
   border-radius: 0px !important;
   border-top: 4px solid #5E35B1 !important;
   margin-top:25px !important;
-  /* animation: fadeInUp 0.5s; */
+   animation: fadeInUp 0.75s;
 }
+
+/* .small-screen-menu .mat-menu-panel{
+  width:50px !important;
+} */
 .cdk-overlay-pane::before{
   width: 0;
   height: 0;
@@ -30,31 +34,66 @@
   content: " ";
   position: absolute;
   top: 10px !important;
-  left: 0px !important;
+  animation: fadeInRightBig 0.75s;
 }
+
+
+.profile-menu .cdk-overlay-pane::before{
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 15px solid #5E35B1;
+  content: " ";
+  position: absolute;
+  top: 10px !important;
+  animation: fadeInRightBig 0.75s;
+}
+
 .mat-menu-content{
   direction: rtl;
   text-align: right;
   padding: 3px;
 }
 
-.mat-expansion-panel-header.mat-expanded{
+.theme-smallscreen-expansion-panel .mat-expansion-panel{
+  box-shadow: none !important;
+  background-color: #ffffff;
+  border:none;
+  margin-top: 5px;
+}
+
+.theme-smallscreen-expansion-panel .mat-expansion-panel-header{
+  box-shadow: none !important;
+  border-radius: 0px;
+  background-color: #ffffff;
+}
+
+.theme-smallscreen-expansion-panel .mat-expansion-panel-header-title{
+  font-size: 12px;
+}
+
+.theme-smallscreen-expansion-panel .mat-expansion-panel-body{
+  background-color: #ffffff;
+}
+
+.theme-expansion-panel .mat-expansion-panel-header.mat-expanded{
  background-color: #5E35B1 !important;
  color: white !important;
 
 }
 
-.mat-expansion-panel-body{
+.theme-expansion-panel .mat-expansion-panel-body{
   background-color: #eeeeee;
   padding: 0 10px 16px 10px !important;
 }
 
-.mat-expansion-panel-header{
+.theme-expansion-panel .mat-expansion-panel-header{
   padding: 0 10px !important;
 }
 
-.mat-expansion-panel-header.mat-expanded .mat-expansion-panel-header-title ,
-.mat-expansion-panel-header.mat-expanded .mat-expansion-indicator::after {
+.theme-expansion-panel .mat-expansion-panel-header.mat-expanded .mat-expansion-panel-header-title ,
+.theme-expansion-panel .mat-expansion-panel-header.mat-expanded .mat-expansion-indicator::after {
   color: #ede7f6;
 }
 

@@ -29,6 +29,10 @@
   color: #ede7f6;
 }
 
+.theme-smallscreen-expansion-panel{
+  box-shadow: none !important;
+}
+
 .mat-badge-content{
   background-color: #e48a29;
 }
@@ -54,6 +58,21 @@
   margin-right:0;
   font-size: 18px;
 }
+
+.mat-list-item {
+  font-size: 11px;
+  color : #616161;
+}
+
+.mat-list-item mat-icon{
+  font-size: 18px;
+}
+
+.mat-list-item img{
+  width: 20px;
+  height: 20px;
+}
+
 
 a{
   text-decoration: none;
