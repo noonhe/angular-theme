@@ -1,6 +1,5 @@
 <mat-sidenav-container class="theme-sidenav-container" autosize>
-    <mat-sidenav class="theme-sidenav" #sidenav mode="side" position="end" opened="true" (mouseenter)="expandSidebar()"
-        (mouseleave)="closeSidebar()">
+    <mat-sidenav class="theme-sidenav" #sidenav [mode]="mode" position="end" opened="false" (mouseleave)="pushed? 2+2 :sidenav.toggle()">
         <mat-toolbar class="theme-sidenav-logo">
             <div fxLayout fxLayoutAlign="space-between" style="width:100%;">
                 <span class="theme-navbar-title">رستافن</span>
@@ -30,7 +29,7 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content class="theme-main-content">
-        <app-header></app-header>
+        <app-header (toggleSidenav)="sidenav.toggle()" [menuAvailable] = "pushed"></app-header>
         <app-home-page></app-home-page>
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -10,8 +10,8 @@ export class SidenavComponent implements OnInit {
   constructor() { }
   items: MenuItem[];
   collapsed: boolean = false;
-  expand:boolean = true;
-  mode : string = "side";
+  pushed:boolean = false;
+  mode : string;
   ngOnInit() {
     this.items = [{
         label: 'سیستم مدیریت مستندات',
@@ -34,19 +34,16 @@ export class SidenavComponent implements OnInit {
   changeSidenavMode(event){
       console.log(event.checked);
       if(event.checked){
-          this.mode="push";
+          this.mode="side";
+          this.pushed=true;
       }
       else{
-          this.mode="side";
+          this.mode="over";
+          this.pushed=false;
       }
   }
 
-
-  expandSidebar(){
-    this.expand= true;
-  }
-
-  closeSidebar(){
-    this.expand = false;
+  happened(event){
+      console.log('hi');
   }
 }

@@ -1,5 +1,8 @@
 <mat-toolbar class="theme-navbar">
   <div>
+    <a mat-button class="theme-menu-toggle-button" *ngIf="!menuAvailable" (click)="changeSidenavMode(!mode)" > 
+      <mat-icon>menu</mat-icon>
+    </a>
     <a href="#" fxHide.lt-md fxShow.gt-sm class="theme-user" mat-button [matMenuTriggerFor]="menu">
       <img src="assets/images/user.png" class="theme-profile-image rounded-circle">
       <span class="theme-profile-title">نام نام‌خانوادگی</span>
@@ -18,9 +21,7 @@
         <span>خروج</span>
       </button>
     </mat-menu>
-    <a href="#" mat-button fxHide.gt-sm fxShow.lt-md >
-      <mat-icon class="theme-nav-icons">menu</mat-icon>
-    </a>
+    
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end">
     <ul fxLayout fxLayoutAlign="end center" class="theme-navbar-items">

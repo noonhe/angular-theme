@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit , Output , EventEmitter , Input} from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import { MatMenuModule} from '@angular/material'
 @Component({
@@ -11,6 +11,9 @@ export class HeaderComponent implements OnInit {
 
   constructor( ) { }
   private items : MenuItem[]
+  @Output() toggleSidenav = new EventEmitter();
+  @Input() menuAvailable : boolean;
+  mode : boolean = false;
   home : MenuItem;
   ngOnInit() {
     this.items = [
@@ -18,6 +21,12 @@ export class HeaderComponent implements OnInit {
     ];
     this.home = {icon : "pi pi-home"}
   
+  }
+
+  changeSidenavMode(mode: boolean){
+    console.log(mode);
+    this.toggleSidenav.emit();
+    this.mode = mode;
   }
 
 }
